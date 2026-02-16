@@ -266,7 +266,7 @@ export default function Portafolio() {
             <div className="relative w-full aspect-square">
               <div className="absolute inset-0 bg-gradient-to-br from-[#d7bd88] to-[#d0c3ba] rounded-3xl opacity-20 blur-2xl"></div>
               <img
-                src="src/assets/program.png"
+                src="images/program.png"
                 alt="Coding"
                 className="relative w-full h-full object-cover rounded-3xl shadow-2xl"
               />
