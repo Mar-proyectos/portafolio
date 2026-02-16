@@ -217,7 +217,7 @@ export default function Portafolio() {
             muted
             playsInline
             className="w-full h-full object-cover opacity-60"
-            src="https://www.w3schools.com/html/mov_bbb.mp4"
+           src="videos/galaxy.mp4" type="video/mp4"
           >
       
           </video>
