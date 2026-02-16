@@ -217,8 +217,9 @@ export default function Portafolio() {
             muted
             playsInline
             className="w-full h-full object-cover opacity-60"
+            src="/portafolio/videos/galaxy.mp4"
           >
-       <source src="/mi-portafolio/videos/galaxy.mp4" type="video/mp4" />
+      
           </video>
           <div className="absolute inset-0 bg-black/20"></div>
         </div>
@@ -415,8 +416,9 @@ export default function Portafolio() {
             muted
             playsInline
             className="w-full h-full object-cover opacity-30"
+            src="/portafolio/videos/galaxy.mp4"
           >
-         <source src="/mi-portafolio/videos/galaxy.mp4" type="video/mp4" />
+       
           </video>
         </div>
 
