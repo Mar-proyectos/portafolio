@@ -82,6 +82,7 @@ export default function Portafolio() {
       year: '2022',
       description: 'Estudiante universitaria aprendiendo los fundamentos de programación, desarrollo web y otros temas, graduándose con honores.'
     },
+
      {
       type: 'education',
       title: 'Ingles - B1',
@@ -183,7 +184,7 @@ export default function Portafolio() {
   };
 
   return (
-    <div className="min-h-screen bg-[#ebe7e1] font-serif">
+    <div className="min-h-screen bg-[#ebe7e1] font-serif overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-transparent backdrop-blur-md z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
@@ -191,12 +192,12 @@ export default function Portafolio() {
             <h1 className="text-xl sm:text-2xl font-bold text-[#d7bd88] tracking-wider">Mar Carabali</h1>
             
             {/* Desktop Menu */}
-            <div className="hidden md:flex gap-6 lg:gap-8">
+            <div className="hidden md:flex gap-8">
               {['home', 'about', 'portafolio', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`text-xs lg:text-sm uppercase tracking-widest transition-all duration-300 ${
+                  className={`text-sm uppercase tracking-widest transition-all duration-300 ${
                     activeSection === section
                       ? 'text-[#d7bd88] border-b-2 border-[#d7bd88]'
                       : 'text-white hover:text-[#d7bd88]'
@@ -237,7 +238,7 @@ export default function Portafolio() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section with Video Background */}
       <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1628] via-[#10214b] to-[#0a1628] relative overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0">
@@ -248,24 +249,24 @@ export default function Portafolio() {
             playsInline
             className="w-full h-full object-cover opacity-60"
           >
-            <source src="/mi-portafolio/videos/galaxy.mp4" type="video/mp4" />
+            <source src="/portafolio/videos/galaxy.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-black/20"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
-          <div className="space-y-4 sm:space-y-6 animate-fadeIn text-center md:text-left">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
+          <div className="space-y-4 sm:space-y-6 animate-fadeIn text-center md:text-left order-2 md:order-1">
             <div className="space-y-2">
               <p className="text-[#d7bd88] text-base sm:text-lg tracking-wider">Hola, mi nombre es</p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">María Carabalí</h1>
-              <div className="text-2xl sm:text-3xl lg:text-4xl text-[#d7bd88] font-light h-12 sm:h-16 flex items-center justify-center md:justify-start">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">María Carabalí</h1>
+              <div className="text-2xl sm:text-3xl md:text-4xl text-[#d7bd88] font-light h-12 md:h-16 flex items-center justify-center md:justify-start">
                 Soy <span className="ml-3">{typewriterText}</span>
               </div>
             </div>
-            <p className="text-[#d0c3ba] text-base sm:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
+            <p className="text-[#d0c3ba] text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
               Apasionada por crear experiencias digitales excepcionales. Combino diseño, desarrollo y datos para construir soluciones innovadoras que impactan.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 justify-center md:justify-start">
               <button 
                 onClick={() => scrollToSection('portafolio')}
                 className="px-6 sm:px-8 py-3 bg-[#d7bd88] text-[#10214b] font-semibold rounded-full hover:bg-[#c9a665] transition-all duration-300 hover:scale-105 shadow-lg"
@@ -281,19 +282,19 @@ export default function Portafolio() {
             </div>
             <div className="flex gap-6 pt-6 justify-center md:justify-start">
               <a href="#" className="text-[#d7bd88] hover:text-[#ebe7e1] transition-all duration-300 hover:scale-110">
-                <Github size={24} className="sm:w-7 sm:h-7" />
+                <Github className="w-6 h-6 sm:w-7 sm:h-7" />
               </a>
               <a href="#" className="text-[#d7bd88] hover:text-[#ebe7e1] transition-all duration-300 hover:scale-110">
-                <Linkedin size={24} className="sm:w-7 sm:h-7" />
+                <Linkedin className="w-6 h-6 sm:w-7 sm:h-7" />
               </a>
               <a href="#" className="text-[#d7bd88] hover:text-[#ebe7e1] transition-all duration-300 hover:scale-110">
-                <Mail size={24} className="sm:w-7 sm:h-7" />
+                <Mail className="w-6 h-6 sm:w-7 sm:h-7" />
               </a>
             </div>
           </div>
 
-          <div className="relative animate-fadeIn order-first md:order-last" style={{ animationDelay: '0.3s' }}>
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-full lg:aspect-square mx-auto">
+          <div className="relative animate-fadeIn order-1 md:order-2" style={{ animationDelay: '0.3s' }}>
+            <div className="relative w-full max-w-sm sm:max-w-md md:max-w-full aspect-square mx-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-[#d7bd88] to-[#d0c3ba] rounded-3xl opacity-20 blur-2xl"></div>
               <img
                 src="images/program.png"
@@ -309,19 +310,19 @@ export default function Portafolio() {
         </div>
 
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
-          <ChevronDown size={28} className="sm:w-8 sm:h-8 text-[#d7bd88]" />
+          <ChevronDown className="w-7 h-7 sm:w-8 sm:h-8 text-[#d7bd88]" />
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 sm:py-20 lg:py-24 bg-[#ebe7e1]">
+      <section id="about" className="py-16 sm:py-20 md:py-24 bg-[#ebe7e1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#10214b] mb-12 sm:mb-16 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#10214b] mb-12 sm:mb-16 text-center">
             Lo que <span className="text-[#d7bd88]">Ofrezco</span>
           </h2>
 
           {/* Skills Cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
             {skills.map((skill, index) => {
               const Icon = skill.icon;
               const [isExpanded, setIsExpanded] = useState(false);
@@ -337,10 +338,9 @@ export default function Portafolio() {
                   
                   <div className="relative z-10">
                     <div className="flex items-center justify-between mb-4 sm:mb-6">
-                      <Icon size={32} className="sm:w-10 sm:h-10 text-[#d7bd88]" />
+                      <Icon className="w-9 h-9 sm:w-10 sm:h-10 text-[#d7bd88]" />
                       <ChevronDown 
-                        size={20} 
-                        className={`sm:w-6 sm:h-6 text-[#d7bd88] transition-transform duration-500 ${isExpanded ? 'rotate-180' : ''}`}
+                        className={`w-6 h-6 text-[#d7bd88] transition-transform duration-500 ${isExpanded ? 'rotate-180' : ''}`}
                       />
                     </div>
                     
@@ -376,7 +376,7 @@ export default function Portafolio() {
           </div>
 
           {/* Experience & Education */}
-          <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-10 lg:p-12">
+          <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-10 md:p-12">
             <h3 className="text-3xl sm:text-4xl font-bold text-[#10214b] mb-8 sm:mb-12 text-center">
               Mi <span className="text-[#d7bd88]">Trayectoria</span>
             </h3>
@@ -384,7 +384,7 @@ export default function Portafolio() {
             <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mb-8 sm:mb-12">
               <button
                 onClick={() => setActiveExperience('experience')}
-                className={`px-6 sm:px-8 py-3 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base ${
+                className={`px-6 sm:px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
                   activeExperience === 'experience'
                     ? 'bg-[#10214b] text-white shadow-lg'
                     : 'bg-[#d0c3ba]/30 text-[#10214b] hover:bg-[#d0c3ba]/50'
@@ -394,7 +394,7 @@ export default function Portafolio() {
               </button>
               <button
                 onClick={() => setActiveExperience('education')}
-                className={`px-6 sm:px-8 py-3 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base ${
+                className={`px-6 sm:px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
                   activeExperience === 'education'
                     ? 'bg-[#10214b] text-white shadow-lg'
                     : 'bg-[#d0c3ba]/30 text-[#10214b] hover:bg-[#d0c3ba]/50'
@@ -405,16 +405,16 @@ export default function Portafolio() {
             </div>
 
             <div className="relative">
-              <div className="hidden sm:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-[#10214b] via-[#d7bd88] to-[#d0c3ba]"></div>
+              <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-[#10214b] via-[#d7bd88] to-[#d0c3ba]"></div>
               
               <div className="space-y-8 sm:space-y-12">
                 {(activeExperience === 'experience' ? experiences : education).map((item, index) => (
                   <div
                     key={index}
-                    className={`flex flex-col sm:flex-row items-center gap-4 sm:gap-8 ${index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'}`}
+                    className={`flex flex-col md:flex-row items-center gap-4 md:gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                   >
-                    <div className={`flex-1 w-full ${index % 2 === 0 ? 'sm:text-right' : 'sm:text-left'}`}>
-                      <div className="inline-block w-full sm:w-auto bg-gradient-to-br from-[#10214b] to-[#1a3a6e] rounded-2xl p-4 sm:p-6 shadow-lg hover:scale-105 transition-all duration-300">
+                    <div className={`flex-1 w-full md:w-auto ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                      <div className="inline-block w-full md:w-auto bg-gradient-to-br from-[#10214b] to-[#1a3a6e] rounded-2xl p-5 sm:p-6 shadow-lg hover:scale-105 transition-all duration-300">
                         <h4 className="text-xl sm:text-2xl font-bold text-[#d7bd88] mb-2">{item.title}</h4>
                         <p className="text-[#d0c3ba] font-semibold mb-1 text-sm sm:text-base">{item.company}</p>
                         <p className="text-white/80 text-xs sm:text-sm mb-3">{item.year}</p>
@@ -422,11 +422,11 @@ export default function Portafolio() {
                       </div>
                     </div>
                     
-                    <div className="hidden sm:block relative z-10">
+                    <div className="hidden md:block relative z-10">
                       <div className="w-6 h-6 bg-[#d7bd88] rounded-full border-4 border-white shadow-lg"></div>
                     </div>
                     
-                    <div className="hidden sm:block flex-1"></div>
+                    <div className="hidden md:block flex-1"></div>
                   </div>
                 ))}
               </div>
@@ -436,7 +436,7 @@ export default function Portafolio() {
       </section>
 
       {/* Portafolio Section */}
-      <section id="portafolio" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-[#10214b] to-[#1a3a6e] relative overflow-hidden">
+      <section id="portafolio" className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-[#10214b] to-[#1a3a6e] relative overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0">
           <video
@@ -446,19 +446,19 @@ export default function Portafolio() {
             playsInline
             className="w-full h-full object-cover opacity-30"
           >
-            <source src="/mi-portafolio/videos/galaxy.mp4" type="video/mp4" />
+            <source src="/portafolio/videos/galaxy.mp4" type="video/mp4" />
           </video>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-center">
             Mis <span className="text-[#d7bd88]">Proyectos</span>
           </h2>
-          <p className="text-[#d0c3ba] text-center mb-12 sm:mb-16 text-sm sm:text-base lg:text-lg px-4">
+          <p className="text-[#d0c3ba] text-center mb-12 sm:mb-16 text-sm sm:text-base md:text-lg px-4">
             Una muestra de los proyectos en los que he trabajado, destacando mis habilidades y experiencia en diversas tecnologías
           </p>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {projects.map((project) => (
               <div
                 key={project.id}
@@ -475,7 +475,7 @@ export default function Portafolio() {
                 </div>
                 
                 <div className="p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#10214b] mb-2 sm:mb-3 group-hover:text-[#d7bd88] transition-colors">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#10214b] mb-2 sm:mb-3 group-hover:text-[#d7bd88] transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-gray-600 mb-3 sm:mb-4 line-clamp-2 text-sm sm:text-base">
@@ -514,7 +514,7 @@ export default function Portafolio() {
             className="bg-white rounded-2xl sm:rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-scaleIn"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative h-48 sm:h-64 lg:h-80 overflow-hidden rounded-t-2xl sm:rounded-t-3xl">
+            <div className="relative h-48 sm:h-64 md:h-80 overflow-hidden rounded-t-2xl sm:rounded-t-3xl">
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
@@ -528,12 +528,12 @@ export default function Portafolio() {
               </button>
             </div>
             
-            <div className="p-6 sm:p-8 lg:p-10">
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#10214b] mb-4 sm:mb-6">
+            <div className="p-6 sm:p-8 md:p-10">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#10214b] mb-4 sm:mb-6">
                 {selectedProject.title}
               </h3>
               
-              <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
+              <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8">
                 {selectedProject.description}
               </p>
               
@@ -560,7 +560,7 @@ export default function Portafolio() {
                   rel="noopener noreferrer"
                   className="flex-1 px-4 sm:px-6 py-3 sm:py-4 bg-[#10214b] text-white rounded-xl font-semibold hover:bg-[#1a3a6e] transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl text-sm sm:text-base"
                 >
-                  <Github size={18} className="sm:w-5 sm:h-5" />
+                  <Github className="w-4 h-4 sm:w-5 sm:h-5" />
                   Ver Código
                 </a>
                 <a
@@ -569,7 +569,7 @@ export default function Portafolio() {
                   rel="noopener noreferrer"
                   className="flex-1 px-4 sm:px-6 py-3 sm:py-4 bg-[#d7bd88] text-[#10214b] rounded-xl font-semibold hover:bg-[#c9a665] transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl text-sm sm:text-base"
                 >
-                  <ExternalLink size={18} className="sm:w-5 sm:h-5" />
+                  <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
                   Ver Demo
                 </a>
               </div>
@@ -579,21 +579,21 @@ export default function Portafolio() {
       )}
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-[#ebe7e1]">
+      <section id="contact" className="py-16 sm:py-20 md:py-24 bg-[#ebe7e1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#10214b] mb-4 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#10214b] mb-4 sm:mb-6">
               Hagamos Realidad <span className="text-[#d7bd88]">Tus Ideas</span>
             </h2>
-            <p className="text-gray-600 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto px-4">
+            <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
               Estoy aquí para ayudarte a construir experiencias digitales excepcionales. 
               Conversemos sobre tu próximo proyecto y cómo puedo aportar valor.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-start">
             <div className="space-y-6 sm:space-y-8">
-              <div className="bg-gradient-to-br from-[#10214b] to-[#1a3a6e] rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl text-white">
+              <div className="bg-gradient-to-br from-[#10214b] to-[#1a3a6e] rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl text-white">
                 <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-[#d7bd88]">Comunicación Global, Impacto Sin Fronteras</h3>
                 <p className="text-[#d0c3ba] mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
                   Conectemos y construyamos algo extraordinario juntos. Cada proyecto es una oportunidad para crear soluciones innovadoras.
@@ -602,7 +602,7 @@ export default function Portafolio() {
                 <div className="space-y-4 sm:space-y-6">
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#d7bd88] rounded-full flex items-center justify-center flex-shrink-0">
-                      <Mail size={18} className="sm:w-5 sm:h-5 text-[#10214b]" />
+                      <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-[#10214b]" />
                     </div>
                     <div>
                       <p className="text-[#d7bd88] font-semibold mb-1 text-sm sm:text-base">Email</p>
@@ -612,7 +612,7 @@ export default function Portafolio() {
                   
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#d7bd88] rounded-full flex items-center justify-center flex-shrink-0">
-                      <Github size={18} className="sm:w-5 sm:h-5 text-[#10214b]" />
+                      <Github className="w-4 h-4 sm:w-5 sm:h-5 text-[#10214b]" />
                     </div>
                     <div>
                       <p className="text-[#d7bd88] font-semibold mb-1 text-sm sm:text-base">GitHub</p>
@@ -622,7 +622,7 @@ export default function Portafolio() {
                   
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#d7bd88] rounded-full flex items-center justify-center flex-shrink-0">
-                      <Linkedin size={18} className="sm:w-5 sm:h-5 text-[#10214b]" />
+                      <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 text-[#10214b]" />
                     </div>
                     <div>
                       <p className="text-[#d7bd88] font-semibold mb-1 text-sm sm:text-base">LinkedIn</p>
@@ -640,7 +640,7 @@ export default function Portafolio() {
                         href="#"
                         className="w-10 h-10 sm:w-12 sm:h-12 bg-[#d7bd88]/20 rounded-full flex items-center justify-center hover:bg-[#d7bd88] transition-all duration-300 group"
                       >
-                        <Icon size={18} className="sm:w-5 sm:h-5 text-[#d7bd88] group-hover:text-[#10214b] transition-colors" />
+                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#d7bd88] group-hover:text-[#10214b] transition-colors" />
                       </a>
                     ))}
                   </div>
@@ -648,8 +648,8 @@ export default function Portafolio() {
               </div>
             </div>
 
-            <form className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 space-y-4 sm:space-y-6">
-              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+            <form className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 md:p-10 space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label className="block text-xs sm:text-sm font-semibold text-[#10214b] mb-2 uppercase tracking-wider">
                     Nombre
@@ -673,7 +673,7 @@ export default function Portafolio() {
                 </div>
               </div>
               
-              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label className="block text-xs sm:text-sm font-semibold text-[#10214b] mb-2 uppercase tracking-wider">
                     Email
